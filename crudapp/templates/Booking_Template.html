@@ -1,0 +1,21 @@
+<!-- filepath: crudapp/templates/book_product.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book {{ product.name }}</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Book Product: {{ product.name }}</h1>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">Book Now</button>
+    </form>
+    <a href="{% url 'gallery' %}" class="btn btn-secondary mt-3">Back to Gallery</a>
+  </div>
+</body>
+</html>

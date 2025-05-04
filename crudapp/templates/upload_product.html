@@ -1,0 +1,27 @@
+<!-- filepath: c:\Users\DELL LATITUDE E6440\Downloads\eco wave\freshshop\crudapp\templates\upload_product.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Product</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Upload Product</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Upload</button>
+            <a href="{% url 'farmer_dashboard' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+        <hr class="my-4">
+        <h2>Create an Account</h2>
+        <p>If you don't have an account, <a href="{% url 'register' %}">register here</a>.</p>
+    </div>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

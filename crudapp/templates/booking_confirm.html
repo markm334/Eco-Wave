@@ -1,0 +1,17 @@
+<!-- filepath: crudapp/templates/booking_confirm.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmed</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Booking Confirmed</h1>
+    <p>Your booking has been sent. The product owner will contact you soon.</p>
+    <a href="{% url 'gallery' %}" class="btn btn-primary">Back to Gallery</a>
+  </div>
+</body>
+</html>

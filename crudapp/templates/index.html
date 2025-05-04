@@ -1,0 +1,789 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Eco Wave - Ecommerce </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Start Main Top -->
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="custom-select-box">
+                        
+                    </div>
+                    <div class="right-phone-box">
+                        <p>Call US :- <a href="#"> +254794347868</a></p>
+                    </div>
+                    <div class="our-link">
+                        <ul>
+                            <li><a href="{% url 'login' %}"><i class="fa fa-user s_color"></i> My Account</a></li>
+                        <li><a href="https://www.google.com/maps?q=-0.6278,37.2143" target="_blank"><i class="fas fa-location-arrow"></i> Our location: </a>
+                          </li>
+                            <li><a href="{% url 'contact_us' %}"><i class="fas fa-headset"></i> Contact Us</a></li>
+                         </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="login-box">
+						<a class="nav-link font-weight-bold text-white" href="{% url 'register' %}">Register </a>
+						<a class="nav-link font-weight-bold text-white" href="{% url 'login' %}">Login</a>
+					</div>
+                    <div class="text-slid-box">
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 5%!  Vegetables
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 4%! Fruits
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 10%! Tubercrop
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 8% off on Vegetables
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 15% off More than 100 kg
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Top -->
+
+    <!-- Start Main Top -->
+    <header class="main-header">
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+        <div class="container">
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                        data-target="#navbar-menu" aria-controls="navbars-rs-food" 
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- Use {% url 'home' %} for brand link instead of index.html -->
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'images/logo.png' %}" class="img-fluid" alt="Logo">
+                </a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">
+                            SHOP
+                        </a>
+                        <ul class="dropdown-menu">
+                           
+                            <li><a href="{% url 'cart' %}">Cart</a></li>
+                            <li><a href="{% url 'checkout' %}">Checkout</a></li>
+                            <li><a href="{% url 'my_account' %}">My Account</a></li>
+                            <li><a href="{% url 'wishlist' %}">Wishlist</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+                    </li>
+                    <!-- Additional nav item example -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+            <!-- Start Attribute Navigation (if any) -->
+            <div class="attr-nav">
+                <ul>
+                    <li class="search">
+                        <a href="#"><i class="fa fa-search"></i></a>
+                    </li>
+                    <li class="side-menu">
+                        <a href="#">
+                            <i class="fa fa-shopping-bag"></i>
+                            <span class="badge">3</span>
+                            <p>My Cart</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Attribute Navigation -->
+        </div>
+        <!-- Start Side Menu (if any) -->
+    </nav>
+    <!-- End Navigation -->
+</header>
+
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+    <!-- Start Slider -->
+    <div id="slides-shop" class="cover-slides">
+        <ul class="slides-container">
+            <li class="text-center">
+                <img src="{% static 'images/veg.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> Eco Wave</strong></h1>
+                            <p class="m-b-40">Experience how EcoWave bridges the gap between farmers and consumers in real-time, creating direct, transparent connections that support local agriculture. <br>By shortening the supply chain, we help reduce transportation emissions and lower the overall carbon footprint—paving the way for a more sustainable future.</p>
+                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{% static 'images/welcome-banner.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> Eco wave</strong></h1>
+                            <p class="m-b-40">Experience how EcoWave bridges the gap between farmers and consumers in real-time, creating direct, transparent connections that support local agriculture. <br>By shortening the supply chain, we help reduce transportation emissions and lower the overall carbon footprint—paving the way for a more sustainable future.</p>
+                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{% static 'images/f3.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> Eco wave</strong></h1>
+                            <p class="m-b-40">Experience how EcoWave bridges the gap between farmers and consumers in real-time, creating direct, transparent connections that support local agriculture. <br>By shortening the supply chain, we help reduce transportation emissions and lower the overall carbon footprint—paving the way for a more sustainable future.</p>
+                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="slides-navigation">
+            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <!-- End Slider -->
+
+    <!-- Start Categories  -->
+    <div class="categories-shop">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="{% static 'images/categories_img_01.jpg' %}" alt="" />
+                        <a class="btn hvr-hover" href="#">Earth's Produce</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="{% static 'images/categories_img_02.jpg' %}" alt="" />
+                        <a class="btn hvr-hover" href="#">From Soil to Plate</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="{% static 'images/categories_img_03.jpg' %}" alt="" />
+                        <a class="btn hvr-hover" href="#">Nature's Bounty</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Categories -->
+	
+	<div class="box-add-products">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="offer-box-products">
+						<img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="Product 1" />
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="offer-box-products">
+						<img class="img-fluid" src="{% static 'images/p2.jpg' %}" alt="Product 2" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <!-- Start Products  -->
+    <div class="products-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Harvest Harmony</h1>
+                           <p>Connect with the earth’s natural produce and embrace the harmony between fresh, locally sourced ingredients and sustainable consumption. Together, we’re building a greener, healthier future.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="special-menu text-center">
+                        <div class="button-group filter-button-group">
+                            <button class="active" data-filter="*">All</button>
+                            <button data-filter=".top-featured">Top featured</button>
+                            <button data-filter=".best-seller">Best seller</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row special-list">
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="{% static 'images/img-pro-01.jpg' %}" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>Carrots</h4>
+                            <h5> Kes 30</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid top-featured">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="new">New</p>
+                            </div>
+                            <img src="{% static 'images/img-pro-02.jpg' %}" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>Tomatoes</h4>
+                            <h5> Kes 40</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid top-featured">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="{% static 'images/img-pro-03.jpg' %}" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>Grapes</h4>
+                            <h5> Kes 100</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="{% static 'images/img-pro-04.jpg' %}" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>Pawpaw</h4>
+                            <h5> Kes 40</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Products  -->
+
+    <!-- Start Blog  -->
+  <!-- filepath: c:\Users\DELL LATITUDE E6440\Downloads\sqlite now\eco wave\freshshop\crudapp\templates\index.html -->
+
+<!-- Blog Section -->
+<div class="latest-blog">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post 1 -->
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="blog-box" data-post-id="1">
+                    <div class="blog-img">
+                        <img class="img-fluid" src="{% static 'images/blog-img.jpg' %}" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>Driving Sustainability Forward</h3>
+                            <p>At EcoWave, we are committed to reducing our environmental impact through innovative solutions. Join us as we create positive change.</p>
+                        </div>
+                        <ul class="option-blog">
+                            <li>
+                                <a href="#" class="like-btn" data-post-id="1">
+                                    <i class="far fa-heart"></i>
+                                    <span class="like-count" id="like-count-1">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Post 2 -->
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="blog-box" data-post-id="2">
+                    <div class="blog-img">
+                        <img class="img-fluid" src="{% static 'images/blog-img-01.jpg' %}" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>Sustainable Practices for a Greener Future</h3>
+                            <p>EcoWave is dedicated to reducing environmental impact while fostering responsible consumption for future generations.</p>
+                        </div>
+                        <ul class="option-blog">
+                            <li>
+                                <a href="#" class="like-btn" data-post-id="2">
+                                    <i class="far fa-heart"></i>
+                                    <span class="like-count" id="like-count-2">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Post 3 -->
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="blog-box" data-post-id="3">
+                    <div class="blog-img">
+                        <img class="img-fluid" src="{% static 'images/blog-img-02.jpg' %}" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>Bridging the Gap Between Consumers and Producers</h3>
+                            <p>EcoWave connects consumers directly with local farmers, reducing carbon footprints and championing sustainability.</p>
+                        </div>
+                        <ul class="option-blog">
+                            <li>
+                                <a href="#" class="like-btn" data-post-id="3">
+                                    <i class="far fa-heart"></i>
+                                    <span class="like-count" id="like-count-3">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- End Blog Post 3 -->
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (Make sure this is loaded) -->
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script>
+$(document).ready(function(){
+  // Handle Like button click for any post
+  $(".like-btn").on("click", function(e){
+    e.preventDefault();
+    var postId = $(this).data("post-id");
+    $.ajax({
+      url: "/update-like/",  // Ensure this endpoint exists in your Django views
+      method: "POST",
+      data: {
+        post_id: postId,
+        csrfmiddlewaretoken: '{{ csrf_token }}'
+      },
+      success: function(response) {
+        // Update like count (response should return { likes: new_like_count })
+        $("#like-count-" + postId).text(response.likes);
+      },
+      error: function(){
+        alert("Error updating like count.");
+      }
+    });
+  });
+});
+</script>
+
+    <!-- End Blog  -->
+
+
+    <!-- Start Instagram Feed  -->
+    <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-01.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-02.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-03.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-04.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-05.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-06.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-07.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-08.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-09.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-05.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Instagram Feed  -->
+
+
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Business Time</h3>
+							<ul class="list-time">
+								<li>Monday - Friday: 07.00am to 10.00pm</li> <li>Saturday: 07.00am to 08.00pm</li> <li>Sunday: 07.00am to 08.00pm</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Newsletter</h3>
+							<form class="newsletter-box">
+								<div class="form-group">
+									<input class="" type="email" name="Email" placeholder="Email Address*" />
+									<i class="fa fa-envelope"></i>
+								</div>
+								<button class="btn hvr-hover" type="submit">Submit</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Social Media</h3>
+							<p>Feel free to connect and build a community together!.</p>
+							<ul>
+                                <li><a href="https://web.facebook.com/mark.murangiri.75/"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://x.com/MarkMurangiri"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/mark-murangiri-5391b4228/"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="https://github.com/markm334" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                                <li><a href="mailto:markmurangiri885@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li><li><a href="https://wa.me/message/YQSHGMTDDPGMG1"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+						</div>
+					</div>
+				</div>
+				<hr>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>About EcoWave</h4>
+                            <p>Eco Wave believes that through collective effort, climate change can be addressed while fostering sustainable development. By promoting carbon footprint reduction and empowering communities through education and innovation, Eco Wave stands as a model for future generations. It is a platform for change, resilience, and hope, providing innovative pathways towards a greener, inclusive, and sustainable planet for all.</p>
+                            </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Information</h4>
+                            <ol style="color: red;">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Our Sitemap</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address:Gacharu  <br>off kagio-sagana,<br> 10230 </p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+254794347868">+254794347868</a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:markmurangiri885@gmail.com">markmurangiri885@gmail.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer  -->
+
+    <!-- Start copyright  -->
+    <div class="footer-copyright">
+        <p class="footer-company">All Rights Reserved. &copy;2025<a href="index.html"> Eco-Wave </a> Designed By :
+            <a href="{% url 'inde' %}"><u><B> Mark Murangiri</u></a></p>
+    </div>
+
+    <!-- End copyright  -->
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/jquery.superslides.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-select.js' %}"></script>
+    <script src="{% static 'js/inewsticker.js' %}"></script>
+    <script src="{% static 'js/bootsnav.js' %}"></script>
+    <script src="{% static 'js/images-loded.min.js' %}"></script>
+    <script src="{% static 'js/isotope.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/baguetteBox.min.js' %}"></script>
+    <script src="{% static 'js/form-validator.min.js' %}"></script>
+    <script src="{% static 'js/contact-form-script.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+          // Like button handler
+          $(".like-btn").on("click", function(e){
+            e.preventDefault();
+            var postId = $(this).data("post-id");
+            $.ajax({
+              url: "/update-like/",  // Create a view to update like counts
+              method: "POST",
+              data: {
+                post_id: postId,
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+              },
+              success: function(response) {
+                // Assuming response contains { likes: new_like_count }
+                $("#like-count-" + postId).text(response.likes);
+              }
+            });
+          });
+        
+          // View button handler
+          $(".view-btn").on("click", function(e){
+            e.preventDefault();
+            var postId = $(this).data("post-id");
+            $.ajax({
+              url: "/update-view/", // Create a view to update view counts
+              method: "POST",
+              data: {
+                post_id: postId,
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+              },
+              success: function(response) {
+                // Assuming response contains { views: new_view_count }
+                $("#view-count-" + postId).text(response.views);
+              }
+            });
+          });
+        
+          // Toggle comments section handler
+          $(".comment-toggle-btn").on("click", function(e){
+            e.preventDefault();
+            var postId = $(this).data("post-id");
+            $("#comments-" + postId).toggle();
+            
+            // Optionally load existing comments via AJAX when toggled open
+            // $.ajax({
+            //   url: "/get-comments/",
+            //   method: "GET",
+            //   data: {
+            //     post_id: postId,
+            //   },
+            //   success: function(response) {
+            //     // Populate comments container with response.comments
+            //     $("#comments-" + postId + " .existing-comments").html(response.comments_html);
+            //     $("#comment-count-" + postId).text(response.count);
+            //   }
+            // });
+          });
+        
+          // Comment form submission handler
+          $(".comment-form").on("submit", function(e){
+            e.preventDefault();
+            var form = $(this);
+            var postId = form.data("post-id");
+            var commentText = form.find("input[name='comment']").val();
+            $.ajax({
+              url: "/submit-comment/",  // Create a view for comment submission
+              method: "POST",
+              data: {
+                post_id: postId,
+                comment: commentText,
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+              },
+              success: function(response) {
+                // Assuming response.comments_html updates the comment block and response.count is new count
+                $("#comments-" + postId + " .existing-comments").html(response.comments_html);
+                $("#comment-count-" + postId).text(response.count);
+                form.find("input[name='comment']").val(""); // clear input
+              },
+              error: function(){
+                alert("Error submitting comment.");
+              }
+            });
+          });
+        });
+    </script>
+
+</body>
+
+</html>
