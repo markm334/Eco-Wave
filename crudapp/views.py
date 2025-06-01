@@ -53,13 +53,11 @@ def contact_us(request):
 def about(request):
     return render(request, 'about.html')
 
-@login_required
 def gallery(request):
-    # Order by descending id (newest first)
     products = Product.objects.all().order_by('-id')
-    # If you want to include an upload form in gallery, you can also pass a new form instance.
     form = ProductForm()
     return render(request, 'gallery.html', {'form': form, 'products': products})
+
 
 def my_account(request):
     return render(request, 'my-account.html')
